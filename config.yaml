@@ -1,0 +1,38 @@
+# general
+hyperparameter:
+  GPU_ID: 1
+  EPOCH: 50
+  LR: 0.0002
+  Neg_Loss: false
+  DDI_IN_MEM: false
+  TARGET_DDI: 0.05
+  T: 0.5
+  decay_weight: 0.85
+  model_name: GAMENet
+  emb_dim: 64
+  sigma: 1.0
+
+# dataset
+dataset:
+  mimic-iii:
+    data_path: ./data/mimic-iii/outputfilitered/records_final.pkl
+    voc_path:  ./data/mimic-iii/outputfilitered/voc_final.pkl
+    ehr_adj_path: ./data/mimic-iii/outputfilitered/ehr_adj_final.pkl
+    ddi_adj_path: ./data/mimic-iii/outputfilitered/ddi_A_final.pkl
+  mimic-iv:
+    data_path: ./data/mimic-iv/output/records_final_4.pkl
+    voc_path: ./data/mimic-iv/output/voc_final_4.pkl
+    ehr_adj_path: ./data/mimic-iv/output/ehr_adj_final_4.pkl
+    ddi_adj_path: ./data/mimic-iv/output/ddi_A_final_4.pkl
+
+
+# Test
+test:
+  mimic-iii:
+    cosine: ./result/mimic-iii/cosine/best.model
+    gaussian: ./result/mimic-iii/gaussian/best.model
+    dot: ./result/mimic-iii/dot/best.model
+  mimic-iv:
+    cosine: ./result/mimic-iv/cosine/best.model
+    gaussian: ./result/mimic-iv/gaussian/best.model
+    dot: ./result/mimic-iv/dot/best.model
